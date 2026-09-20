@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.WenjuanhuidaDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.WenjuanhuidaEntity" id="wenjuanhuidaMap">
+        <result property="wenjuanbiaoti" column="wenjuanbiaoti"/>
+        <result property="tupian" column="tupian"/>
+        <result property="wentiyi" column="wentiyi"/>
+        <result property="huidayi" column="huidayi"/>
+        <result property="wentier" column="wentier"/>
+        <result property="huidaer" column="huidaer"/>
+        <result property="wentisan" column="wentisan"/>
+        <result property="huidasan" column="huidasan"/>
+        <result property="wentisi" column="wentisi"/>
+        <result property="huidasi" column="huidasi"/>
+        <result property="wentiwu" column="wentiwu"/>
+        <result property="huidawu" column="huidawu"/>
+        <result property="juminzhanghao" column="juminzhanghao"/>
+        <result property="juminxingming" column="juminxingming"/>
+        <result property="shhf" column="shhf"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.WenjuanhuidaView" >
+
+		SELECT  wenjuanhuida.* FROM wenjuanhuida  wenjuanhuida 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.WenjuanhuidaView" >
+		SELECT * FROM wenjuanhuida  wenjuanhuida <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
